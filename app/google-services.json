@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "764557008188",
+    "project_id": "e-meds-854a1",
+    "storage_bucket": "e-meds-854a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764557008188:android:e4eee233f4fddccf4a9239",
+        "android_client_info": {
+          "package_name": "com.example.android.e_meds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764557008188-86ks5dlpl2gb34897efbo89k51hq47f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuwjkhpdNWuy-bZNmHZZuGQZVvhKjnWzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764557008188-86ks5dlpl2gb34897efbo89k51hq47f1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,7 +7,6 @@
     tools:context=".activities.ForAdmin">
 
 
-
     <LinearLayout
         android:id="@+id/DataLayout"
         android:layout_width="match_parent"
@@ -87,7 +86,6 @@
                 android:layout_height="match_parent"
                 android:hint="Enter Rate"
                 android:maxLines="1"
-                android:inputType="number"
                 android:padding="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,11 +110,6 @@
                 android:maxLines="1"
                 android:padding="10dp" />
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/typeSpinner"/>
-
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -138,7 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Enter Discount"
-                android:inputType="number"
+                android:inputType="text"
                 android:maxLines="1"
                 android:padding="10dp" />
 
@@ -149,7 +142,6 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/btnRelative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/DataLayout">

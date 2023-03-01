@@ -20,4 +20,14 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
+    <style name="InputText_Border" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor" >@color/black</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="cornerRadius">6dp</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">15sp</item>
+    </style>
+
 </resources>

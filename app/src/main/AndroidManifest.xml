@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android.e_meds">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,20 +16,46 @@
         android:theme="@style/Theme.EMEDS"
         tools:targetApi="31">
         <activity
-            android:name=".ForAdmin"
-            android:exported="false" />
+            android:name=".activities.AdminLogin"
+            android:exported="true"
+            android:label="Admin Login"
+            android:parentActivityName=".activities.AdminLogin"
+            android:theme="@style/NewTheme"  />
         <activity
-            android:name=".MyOrders"
-            android:exported="false" />
+            android:name=".activities.ReadActivity"
+            android:exported="true"
+            android:label="All Medicines"
+            android:parentActivityName=".activities.ReadActivity"
+            android:theme="@style/NewTheme" />
         <activity
-            android:name=".MyCart"
-            android:exported="false" />
+            android:name=".activities.ForAdmin"
+            android:exported="true"
+            android:label="For Admin"
+            android:parentActivityName=".activities.ForAdmin"
+            android:theme="@style/NewTheme" />
         <activity
-            android:name=".Medicine"
-            android:exported="false" />
+            android:name=".activities.MyOrders"
+            android:exported="true"
+            android:label="My orders"
+            android:parentActivityName=".activities.MyOrders"
+            android:theme="@style/NewTheme" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".activities.MyCart"
+            android:exported="true"
+            android:label="My Cart"
+            android:parentActivityName=".activities.MyCart"
+            android:theme="@style/NewTheme" />
+        <activity
+            android:name=".activities.Medicine"
+            android:exported="true"
+            android:label="Medicines"
+            android:parentActivityName=".activities.Medicine"
+            android:theme="@style/NewTheme" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true"
+            android:label="E-Meds"
+            android:theme="@style/NewTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
