@@ -28,27 +28,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/edit_text_background"
-            android:drawableLeft="@drawable/ic_baseline_search_24"
 
-            android:inputType="textEmailAddress"
-            android:paddingLeft="-15dp"
-
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:iconifiedByDefault="false"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:queryHint="search medicines / company" />
-
-
-       <!-- <AutoCompleteTextView
+        <TextView
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -59,10 +40,29 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:iconifiedByDefault="false"
-
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:queryHint="search medicines / company"/>-->
+            />
+
+
+        <!--  <androidx.appcompat.widget.SearchView
+              android:id="@+id/search_bar"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:layout_marginLeft="60dp"
+              android:layout_marginRight="30dp"
+              android:background="@drawable/edit_text_background"
+              android:drawableLeft="@drawable/ic_baseline_search_24"
+
+              android:paddingLeft="-5dp"
+
+              android:textColor="@color/black"
+              android:textSize="16sp"
+
+              app:layout_constraintBottom_toBottomOf="@+id/imageView"
+              app:layout_constraintTop_toTopOf="@+id/imageView"
+              app:hint="search medicines / company" />-->
+
 
         <TextView
             android:id="@+id/txtMedicine"
@@ -83,6 +83,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
+            android:weightSum="4"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtMedicine">
@@ -91,8 +92,7 @@
                 android:id="@+id/AllLay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="20dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="@{()->mainViewModel.onClickAll()}"
                 android:orientation="vertical">
@@ -118,7 +118,7 @@
                 android:id="@+id/skinLay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="@{()->mainViewModel.onClickSkin()}"
 
@@ -145,7 +145,7 @@
                 android:id="@+id/healthLay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="@{()->mainViewModel.onClickHealth()}"
 
@@ -172,9 +172,9 @@
                 android:id="@+id/injectionsLay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="@{()->mainViewModel.onClickInjections()}"
-
                 android:orientation="vertical">
 
 
@@ -209,7 +209,7 @@
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
+app:layout_constraintBottom_toTopOf="@+id/details"
             app:layout_constraintTop_toBottomOf="@+id/imagesLinear" />
         <!--
             <TextView
@@ -379,18 +379,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center">
+
+                android:weightSum="2">
 
                 <LinearLayout
                     android:id="@+id/MyCartLay"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="20dp"
+
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:onClick="@{()->mainViewModel.onClickMyCart()}"
                     android:orientation="vertical">
@@ -417,8 +419,7 @@
                     android:id="@+id/MyOrderLay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:onClick="@{()->mainViewModel.onClickMyOrder()}"
 
@@ -449,14 +450,14 @@
 
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:weightSum="2">
 
                 <LinearLayout
                     android:id="@+id/contactUsLay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:onClick="@{()->mainViewModel.onClickContactUs()}"
 
@@ -484,8 +485,7 @@
                     android:id="@+id/forAdminLay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:onClick="@{()->mainViewModel.onClickForAdmin()}"
 

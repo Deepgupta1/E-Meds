@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.android.e_meds.R;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     MainViewMmodel mainViewMmodel;
+
     FirebaseFirestore db;
     ArrayList<String> arrayList = new ArrayList<>();
 
@@ -45,12 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
         mainViewMmodel = new ViewModelProvider(this, new MainViewModelFactory(MainActivity.this)).get(MainViewMmodel.class);
         binding.setMainViewModel(mainViewMmodel);
+        binding.searchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,Medicine.class).putExtra("name", "search"));
+            }
+        });
 
 
-        search();
     }
 
-    public void search() {
+/*    public void search() {
         db = FirebaseFirestore.getInstance();
 
         db = FirebaseFirestore.getInstance();
@@ -68,13 +75,17 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                             ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList);
+                            *//*binding.searchBar1.setThreshold(1);
+                            binding.searchBar1.setAdapter(adapter);*//*
+                            binding.searchBar1.setAdapter(adapter);
+                            binding.searchBar1.setScrollBarSize(4);
                             binding.searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                                 @Override
                                 public boolean onQueryTextSubmit(String query) {
-                                    if(!query.isEmpty()) {
+                                    if (!query.isEmpty()) {
                                         Intent intent = new Intent(MainActivity.this, Medicine.class);
                                         intent.putExtra("name", query);
-                                        Log.d("Query--",query);
+                                        Log.d("Query--", query);
                                         startActivity(intent);
                                     }
 
@@ -83,8 +94,10 @@ public class MainActivity extends AppCompatActivity {
 
                                 @Override
                                 public boolean onQueryTextChange(String newText) {
-                                  //  Toast.makeText(MainActivity.this, "seach change", Toast.LENGTH_SHORT).show();
-                                    return false;
+                                    binding.searchBar1.setVisibility(View.VISIBLE);
+
+
+                                    return true;
                                 }
                             });
 
@@ -103,5 +116,5 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-    }
+    }*/
 }

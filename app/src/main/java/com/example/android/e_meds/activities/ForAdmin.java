@@ -228,11 +228,11 @@ public class ForAdmin extends AppCompatActivity {
 
     private void createUserAccount(String userId, String name, String pack, float rate, int discount, String type) {
         Map<String, Object> user = new HashMap<>();
-        user.put("ItemName", name);
+        user.put("Item Name", name);
         user.put("Pack", pack);
         user.put("Rate", rate);
         user.put("Discount", discount);
-        user.put("type", type);
+        user.put("Type", type);
 
         db.collection("users")
                 .document(userId)
@@ -258,13 +258,13 @@ public class ForAdmin extends AppCompatActivity {
 
     public void setUpdate(String name, String pack, float rate, int discount, String type) {
         Map<String, Object> user = new HashMap<>();
-        user.put("ItemName", name);
+        user.put("Item Name", name);
         user.put("Pack", pack);
         user.put("Rate", rate);
         user.put("Discount", discount);
-        user.put("type", type);
+        user.put("Type", type);
 
-        db.collection("users").whereEqualTo("ItemName", name)
+        db.collection("users").whereEqualTo("Item Name", name)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -300,7 +300,7 @@ public class ForAdmin extends AppCompatActivity {
 
     public void deleteData(String name) {
 
-        db.collection("users").whereEqualTo("ItemName", name)
+        db.collection("users").whereEqualTo("Item Name", name)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {

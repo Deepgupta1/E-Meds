@@ -22,6 +22,7 @@ import com.example.android.e_meds.roomdb.OrdersDatabase;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MedicineViewHolder> {
     Context context;
@@ -123,5 +124,10 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.Medici
 
 
         }
+    }
+
+    public void filterList(List<MedicineModel> filteredList) {
+        arrayList = (ArrayList<MedicineModel>) filteredList;
+        notifyDataSetChanged();
     }
 }

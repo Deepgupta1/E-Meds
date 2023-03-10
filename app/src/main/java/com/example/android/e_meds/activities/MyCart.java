@@ -56,7 +56,7 @@ public class MyCart extends AppCompatActivity {
             public void onClick(View view) {
                 String smsNumber = "918368175729";
 
-                String body = "Hi,\nI want to order:\n";
+              /*  String body = "Hi,\nI want to order:\n";
                 for (int i = 0; i < arrayList.size(); i++) {
                     body += i + 1 + ". " + arrayList.get(i).getItemName() + "\n";
                 }
@@ -67,8 +67,8 @@ public class MyCart extends AppCompatActivity {
                 sendIntent.putExtra("jid", PhoneNumberUtils.stripSeparators(smsNumber) + "@s.whatsapp.net");//phone number without "+" prefix
                 sendIntent.putExtra(Intent.EXTRA_TEXT, body);
                 sendIntent.setType("text/plain");
-                startActivity(sendIntent);
-               /* Uri uri = Uri.parse("smsto:9540388951");
+                startActivity(sendIntent);*/
+                Uri uri = Uri.parse("smsto:8368175729");
                 Intent it = new Intent(Intent.ACTION_SENDTO, uri);
                 String  body="Hi,\nI want to order:\n";
                 for(int i=0;i<arrayList.size();i++){
@@ -76,7 +76,7 @@ public class MyCart extends AppCompatActivity {
                 }
 
                 it.putExtra("sms_body", body);
-                startActivity(it);*/
+                startActivity(it);
             }
         });
 

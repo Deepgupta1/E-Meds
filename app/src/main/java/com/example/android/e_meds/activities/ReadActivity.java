@@ -51,11 +51,11 @@ public class ReadActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot documents : task.getResult()) {
 
                                 String id = documents.getId();
-                                String name = documents.get("ItemName").toString();
+                                String name = documents.get("Item Name").toString();
                                 float rate = Float.parseFloat(documents.get("Rate").toString());
                                 int discount = Integer.parseInt(documents.get("Discount").toString());
                                 String pack = documents.get("Pack").toString();
-                                String type = documents.get("type").toString();
+                                String type = documents.get("Type").toString();
                                 arrayList.add(new MedicineModel(id, name, pack, rate, discount, type));
                                 Log.d(tag, " ---> in if" +arrayList.size());
                                 Log.d(tag, documents.getId() + " ---> " + documents.getData());
