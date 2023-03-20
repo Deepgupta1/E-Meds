@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.e_meds.R;
@@ -31,6 +32,7 @@ public class MyCart extends AppCompatActivity {
     String tag = "MyCart.java";
     FloatingActionButton messageBtn;
     Boolean flag = false;
+    public static TextView txtTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MyCart extends AppCompatActivity {
 
         addToCartRecycler = findViewById(R.id.addToCartRecycler);
         messageBtn = findViewById(R.id.messageBtn);
+        txtTotal=findViewById(R.id.txtTotal);
         database = MedicineDatabase.getDB(this);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -50,6 +53,12 @@ public class MyCart extends AppCompatActivity {
 
 
         addToCartRecycler.setAdapter(new CartAdapter(this, arrayList));
+        int grandTotal=0;
+        for (int i=0;i<arrayList.size();i++){
+            grandTotal=grandTotal+arrayList.get(i).getTotal();
+        }
+
+        txtTotal.setText("Total price: \u20B9"+grandTotal);
 
         messageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,8 +81,13 @@ public class MyCart extends AppCompatActivity {
                 Intent it = new Intent(Intent.ACTION_SENDTO, uri);
                 String  body="Hi,\nI want to order:\n";
                 for(int i=0;i<arrayList.size();i++){
-                    body+=i+1+". "+arrayList.get(i).getItemName()+"\n";
+                    body+=i+1+". "+arrayList.get(i).getItemName()+" quantity: "+arrayList.get(i).getQuant()+" price:"+arrayList.get(i).getTotal()+"\n";
                 }
+                int grandTotal=0;
+                for (int i=0;i<arrayList.size();i++){
+                    grandTotal=grandTotal+arrayList.get(i).getTotal();
+                }
+                body+="total:"+grandTotal;
 
                 it.putExtra("sms_body", body);
                 startActivity(it);
@@ -83,6 +97,10 @@ public class MyCart extends AppCompatActivity {
 
        //
 
+    }
+    public static void totalPrice(int total){
+        Log.d("abc---","as=="+total);
+        txtTotal.setText("Total price: \u20B9"+total);
     }
 
     @Override

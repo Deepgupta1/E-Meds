@@ -21,11 +21,12 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="130dp"
             android:contentDescription="TODO"
             android:src="@drawable/design_dashboard"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/txtMedicine"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -35,13 +36,16 @@
             android:layout_height="50dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+app:layout_constraintLeft_toLeftOf="@+id/imageView"
+            app:layout_constraintRight_toRightOf="parent"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/ic_baseline_search_24"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:iconifiedByDefault="false"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
             />
 
 
@@ -70,10 +74,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:text="Medicines"
             android:textColor="@color/black"
             android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/imagesLinear"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <LinearLayout
@@ -86,6 +90,7 @@
             android:weightSum="4"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/txtDetails"
             app:layout_constraintTop_toBottomOf="@id/txtMedicine">
 
             <LinearLayout
@@ -203,7 +208,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="5dp"
             android:text="Detials"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -369,7 +374,7 @@ app:layout_constraintBottom_toTopOf="@+id/details"
             android:id="@+id/details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+android:layout_marginBottom="10dp"
 
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -380,8 +385,7 @@ app:layout_constraintBottom_toTopOf="@+id/details"
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:gravity="center"
                 android:layout_marginBottom="10dp"
 
                 android:weightSum="2">
@@ -449,7 +453,7 @@ app:layout_constraintBottom_toTopOf="@+id/details"
                 android:layout_width="match_parent"
 
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="50dp"
                 android:gravity="center"
                 android:weightSum="2">
 
@@ -514,44 +518,6 @@ app:layout_constraintBottom_toTopOf="@+id/details"
 
         </LinearLayout>
 
-
-        <!--    <ImageView
-                android:layout_width="170dp"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/design_dashboard"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:rotation="180"/>-->
-
-        <!-- <ImageView
-             android:layout_width="170dp"
-             android:layout_height="?attr/actionBarSize"
-             app:layout_constraintBottom_toBottomOf="parent"
-             android:src="@drawable/design_dashboard"
-             app:layout_constraintRight_toRightOf="parent"
-             android:scaleY="-1"
-             />
-
-         <ImageView
-             android:layout_width="57dp"
-             android:layout_height="57dp"
-             app:layout_constraintBottom_toBottomOf="parent"
-             android:src="@drawable/circle"
-             app:layout_constraintRight_toRightOf="parent"
-             app:layout_constraintLeft_toLeftOf="parent"
-             android:scaleY="-1"
-             android:layout_marginBottom="1dp"
-             />-->
-        <!--<com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:fitsSystemWindows="true"
-            app:itemRippleColor="@android:color/transparent"
-            android:background="@android:color/transparent"
-            app:menu="@menu/bottom_nevigation_item"
-            app:elevation="0dp"
-            />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -63,7 +63,7 @@ public class ForAdmin extends AppCompatActivity {
         edittextDiscount = findViewById(R.id.edittextDiscount);
 
         spinner = findViewById(R.id.typeSpinner);
-       ;
+
 
 
         db = FirebaseFirestore.getInstance();
@@ -72,10 +72,13 @@ public class ForAdmin extends AppCompatActivity {
         edittextType.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    openTypeList();
 
-                openTypeList();
+                    return true;
+                }
+                return false;
 
-                return true;
             }
         });
         add.setOnClickListener(new View.OnClickListener() {

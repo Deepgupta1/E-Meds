@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase;
 import com.example.android.e_meds.models.CartModel;
 import com.example.android.e_meds.models.MyOrderModel;
 
-@Database(entities = MyOrderModel.class,exportSchema = false,version = 1)
+@Database(entities = MyOrderModel.class,exportSchema = false,version =2)
 public abstract class OrdersDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "OrderDb";

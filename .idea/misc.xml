@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/deepa/AppData/Local/Android/Sdk/platforms/android-33/data/res/layout/simple_list_item_1.xml" value="0.25" />
+        <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/drawable/add.xml" value="0.2035" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/drawable/circle.xml" value="0.158" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/drawable/design_dashboard.xml" value="0.158" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/drawable/edit_text_background.xml" value="0.158" />
+        <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.2035" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1905" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/drawable/ic_wave.xml" value="0.158" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/drawable/img.xml" value="0.158" />
@@ -18,9 +20,12 @@
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/activity_my_cart.xml" value="0.25" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/activity_my_orders.xml" value="0.25" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/activity_read.xml" value="0.25" />
+        <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/activity_splash_sreen.xml" value="0.25" />
+        <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/cart_adapter.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/fragment_read.xml" value="0.25" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/medicine_adapter.xml" value="0.25" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/read_adapter.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/layout/update_layout_dialog.xml" value="0.25" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/menu/bottom_nevigation_item.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/deepa/Downloads/EMEDS/app/src/main/res/menu/search.xml" value="0.25" />
       </map>

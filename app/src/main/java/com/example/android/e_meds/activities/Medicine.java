@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.android.e_meds.R;
@@ -21,6 +22,7 @@ import com.example.android.e_meds.models.MedicineModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -37,7 +39,8 @@ public class Medicine extends AppCompatActivity {
     RecyclerView medicineRecycler;
     ArrayList<MedicineModel> arrayList = new ArrayList<>();
     FirebaseFirestore db;
-    SearchView searchView;
+    FloatingActionButton cart;
+
     MedicineAdapter adapter;
     String tag = "Medicine.java";
 
@@ -47,7 +50,7 @@ public class Medicine extends AppCompatActivity {
         setContentView(R.layout.activity_medicine);
 
         medicineRecycler = findViewById(R.id.medicineRecycler);
-        searchView = findViewById(R.id.searchView);
+        cart=findViewById(R.id.cart);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         medicineRecycler.setLayoutManager(layoutManager);
@@ -55,7 +58,14 @@ public class Medicine extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         Intent intent = getIntent();
         click = intent.getStringExtra("click");
-search=intent.getStringExtra("name");
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Medicine.this,MyCart.class));
+            }
+        });
+
         read(click);
 
 /*
@@ -105,8 +115,15 @@ search=intent.getStringExtra("name");
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                List<MedicineModel> filteredList = filter(arrayList, newText);
-                adapter.filterList(filteredList);
+                try{
+                    List<MedicineModel> filteredList = filter(arrayList, newText);
+                    Log.d(tag,filteredList.size()+"");
+                    adapter.filterList(filteredList);
+                }
+                catch (Exception e){
+
+                }
+
                 return true;
             }
         });
@@ -150,7 +167,7 @@ search=intent.getStringExtra("name");
                         }
                     });
 
-        } else if (search != null&& search.equals("search")) {
+        } else if (search != null&& search.equals("all")) {
             db.collection("users").get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
@@ -168,7 +185,9 @@ search=intent.getStringExtra("name");
                                     arrayList.add(new MedicineModel(id, name, pack, rate, discount, type));
 
                                 }
-                                medicineRecycler.setAdapter(new MedicineAdapter(Medicine.this, arrayList));
+                                Log.d(tag, "in search "+arrayList.size());
+                                adapter = new MedicineAdapter(Medicine.this, arrayList);
+                                medicineRecycler.setAdapter(adapter);
                             } else {
                                 Log.d(tag, "in search else");
                                 Toast.makeText(Medicine.this, "No Medicine Found", Toast.LENGTH_SHORT).show();
@@ -201,7 +220,8 @@ search=intent.getStringExtra("name");
                                     arrayList.add(new MedicineModel(id, name, pack, rate, discount, type));
 
                                 }
-                                medicineRecycler.setAdapter(new MedicineAdapter(Medicine.this, arrayList));
+                                adapter = new MedicineAdapter(Medicine.this, arrayList);
+                                medicineRecycler.setAdapter(adapter);
                             } else {
                                 Log.d(tag, "in default else");
                                 Toast.makeText(Medicine.this, "No Medicine Found", Toast.LENGTH_SHORT).show();

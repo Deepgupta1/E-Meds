@@ -13,6 +13,8 @@ public class CartModel {
     float rate;
     int Discount;
     String type;
+    int total;
+    int quant;
 
     public String getType() {
         return type;
@@ -30,14 +32,29 @@ public class CartModel {
         this.id = id;
     }
 
-    public CartModel(String itemName, String pack, float rate, int discount, String type) {
+    public CartModel(String itemName, String pack, float rate, int discount, String type,int total,int quant) {
         this.itemName = itemName;
         this.pack = pack;
         this.rate = rate;
         this.Discount = discount;
         this.type = type;
+        this.total=total;
+        this.quant=quant;
 
     }
+
+    public CartModel(int id,String itemName, String pack, float rate, int discount, String type,int total,int quant) {
+        this.id=id;
+        this.itemName = itemName;
+        this.pack = pack;
+        this.rate = rate;
+        this.Discount = discount;
+        this.type = type;
+        this.total=total;
+        this.quant=quant;
+
+    }
+
 
     public CartModel() {
 
@@ -73,5 +90,21 @@ public class CartModel {
 
     public void setDiscount(int discount) {
         Discount = discount;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public int getQuant() {
+        return quant;
+    }
+
+    public void setQuant(int quant) {
+        this.quant = quant;
     }
 }

@@ -13,6 +13,8 @@ public class MyOrderModel {
     float rate;
     int Discount;
     String type;
+    int total;
+    int quantity;
 
     public String getType() {
         return type;
@@ -30,17 +32,48 @@ public class MyOrderModel {
         this.id = id;
     }
 
-    public MyOrderModel(String itemName, String pack, float rate, int discount, String type) {
+    public MyOrderModel(String itemName, String pack, float rate, int discount, String type,int total,int quantity) {
         this.itemName = itemName;
         this.pack = pack;
         this.rate = rate;
         this.Discount = discount;
         this.type = type;
+        this.total=total;
+        this.quantity=quantity;
+
+
+    }
+    public MyOrderModel(int id,String itemName, String pack, float rate, int discount, String type,int total,int quantity) {
+        this.id=id;
+        this.itemName = itemName;
+        this.pack = pack;
+        this.rate = rate;
+        this.Discount = discount;
+        this.type = type;
+        this.total=total;
+        this.quantity=quantity;
+
 
     }
 
     public MyOrderModel() {
 
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getItemName() {

@@ -50,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
         binding.searchBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,Medicine.class).putExtra("name", "search"));
+                Intent intent = new Intent(MainActivity.this, Medicine.class);
+                intent.putExtra("click", "all");
+                startActivity(intent);
             }
         });
 
